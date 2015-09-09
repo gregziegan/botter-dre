@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>You search for: <strong>{{ query }}</strong></h3>
+
+{% if songs %}
+    <h5>Found {{ songs|length }} song{{ songs|pluralize }}</h5>
+    <ul class="unstyled">
+        {% for song in songs %}
+        <li><a href="/{{ song.id }}">{{ song.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No songs matched your search criteria.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ song_title }}{% endblock %}
+
+{% block content %}
+<br>
+<div class="container">
+  <h1 class="text-center">{{ song_title }}</h1>
+  <br><br>
+  {% for line in song_lyrics %}
+  <p class="text-center" style="font-size: 23px">{{ line }}</p>
+  {% endfor %}
+</div>
+{% endblock %}

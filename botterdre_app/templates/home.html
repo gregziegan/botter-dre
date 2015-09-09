@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Botter Dre | Lyrics Generator {% endblock %}
+
+{% block content %}
+  <h2>Recently Generated Songs</h2>
+  <div class="col-md-6">
+    <table class="table table-hover">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Song Title</td>
+        </tr>
+    </thead>    
+  {% for song in recent_songs %}
+  <tbody>
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><a href={% url 'lyrics' song.id %}>{{ song.title }}</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>    
+  </table>
+</div>
+{% endblock %}
